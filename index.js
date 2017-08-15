@@ -1,6 +1,7 @@
 const express = require('express');
+const config = require('./config');
 
-const port = 4301;
+const port = config.port;
 const app = express();
 
 app.get('/api', (req, res) => {
