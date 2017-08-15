@@ -19,5 +19,9 @@
   "homepage": "https://github.com/marielakas/ng-server#readme",
   "dependencies": {
     "express": "^4.15.4"
+  },
+  "devDependencies": {
+    "body-parser": "^1.17.2",
+    "guid": "0.0.12"
   }
 }
