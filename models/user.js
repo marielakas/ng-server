@@ -1,19 +1,15 @@
 const guid = require('guid');
 
-let users = [
-    {
-        id: guid.create(),
+const firstUserGuid = guid.create();
+
+let users = {
+    [firstUserGuid]: {
+        id: firstUserGuid,
         firstName: 'Mariela',
         lastName: 'Kasovska',
         age: 25
-    },
-    {
-        id: guid.create(),
-        firstName: 'Georgi',
-        lastName: 'Alexandrov',
-        age: 30
     }
-];
+};
 
 module.exports = {
     getUsers: () => {
@@ -21,11 +17,11 @@ module.exports = {
     },
 
     addUser: (user) => {
-        let newUser = Object.assign({}, user, { 
-            id: guid.create() 
+        const newUserGuid = guid.create();
+        
+        users[newUserGuid] = Object.assign({}, user, { 
+            id: newUserGuid
         });
-
-        users.push(newUser);
 
         return users;   
     }

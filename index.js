@@ -10,6 +10,7 @@ const app = express();
 app.use(bodyParser.json());
 
 app.get('/user', (req, res) => {
+    console.log('***********************REQUEST************************');
     UserController.getUsers(req, res);
 });
 
